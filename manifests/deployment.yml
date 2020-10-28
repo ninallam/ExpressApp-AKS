@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "testdc-0b3d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "testdc-0b3d"
+  template:
+    metadata:
+      labels:
+        app: "testdc-0b3d"
+    spec:
+      containers:
+        - name: "testdc-0b3d"
+          image: "nikitacontainer.azurecr.io/testdc"
+          ports:
+          - containerPort: 3000
